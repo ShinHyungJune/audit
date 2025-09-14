@@ -90,17 +90,29 @@ nav .btn1.opened .hamburger span:nth-child(3) {
 nav ul{
   overflow:auto;position: absolute;top:0;bottom:0;left:-500px;background: rgba(0,0,0,0.4);
   padding-left:32px; padding-right:32px;
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  /* Custom scrollbar for Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(225, 110, 38, 0.7) rgba(255, 255, 255, 0.1);
 }
+/* Custom scrollbar for Webkit browsers */
 nav ul::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  width: 8px;
+}
+nav ul::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+nav ul::-webkit-scrollbar-thumb {
+  background: rgba(225, 110, 38, 0.7);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+nav ul::-webkit-scrollbar-thumb:hover {
+  background: rgba(225, 110, 38, 1);
 }
 nav ul li {
   width:300px;
   margin-top:15px;
-  opacity:0.7;
   transition:all .3s;
 }
 
@@ -116,14 +128,16 @@ nav ul li a img {
   transition: all 0.3s;
   border:2px solid transparent; box-sizing: border-box;
   border-radius:5px; overflow:hidden;
+  opacity:0.7;
 }
 nav ul li.active {
-  opacity:1;
+
 }
 nav ul li.active img {
   border-color:#E16E26;
+  opacity:1;
 }
-nav ul li:hover {
+nav ul li:hover img {
   opacity:1;
 }
 nav ul li:hover img {
@@ -557,9 +571,9 @@ nav ul li:hover img {
 /*==================== */
 /* .btn_wrap a{display: block;position:fixed;top:50%;width:56px;height:200px;margin-top:-100px;text-indent:-9999px;z-index: 11000} */
 .btn_wrap .prev_btn{
-  left:3%;
-  display: block;position:fixed;bottom:18px;width:50px;height:50px;margin-top:-100px;text-indent:-9999px;z-index: 11000;
-  background: #ffffff;
+  right:120px;
+  display: block;position:fixed;bottom:25px;width:50px;height:50px;margin-top:-100px;text-indent:-9999px;z-index: 11000;
+  background: #E16E26;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
@@ -575,15 +589,15 @@ nav ul li:hover img {
   left: 50%;
   width: 12px;
   height: 12px;
-  border-left: 3px solid #333333;
-  border-bottom: 3px solid #333333;
+  border-left: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
   transform: translate(-40%, -50%) rotate(45deg);
 }
 
 .btn_wrap .next_btn{
-  right:3%;
-  display: block;position:fixed;bottom:18px;width:50px;height:50px;margin-top:-100px;text-indent:-9999px;z-index: 11000;
-  background: #ffffff;
+  right:60px;
+  display: block;position:fixed;bottom:25px;width:50px;height:50px;margin-top:-100px;text-indent:-9999px;z-index: 11000;
+  background: #E16E26;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
@@ -599,8 +613,8 @@ nav ul li:hover img {
   left: 50%;
   width: 12px;
   height: 12px;
-  border-right: 3px solid #333333;
-  border-bottom: 3px solid #333333;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
   transform: translate(-60%, -50%) rotate(-45deg);
 }
 /* .btn_wrap .prev_btn_end{left:20px;background-image: url(../img/img_btn_prev_end.png);background-repeat: no-repeat;} /* 마지막 화면을 위해 */ 
@@ -632,7 +646,7 @@ nav ul li:hover img {
 }
 
   /* #end{display: none;position: absolute;top:0;bottom:0;left:0;right: 0;background:url("../img/end_bg_origin.jpg") 50% 60%;z-index: 15000;text-align: center;} */
-#end{display: none;position: absolute;top:0;bottom:0;left:0;right: 0;background:url("../img/end_bg.png") 50% 60%;z-index: 200000;text-align: center;height:100%;width:100%}
+#end{display: none;position: absolute;top:0;bottom:0;left:0;right: 0;background:url("../img/end_bg.png") 100% 100%; background-size:cover; background-position:center; z-index: 200000;text-align: center;height:100%;width:100%}
 #end>button{position:absolute;top:15px;right:15px;border:0;background:none;}
 
 #video{display:none;position: absolute;top:0;bottom:0;left:0;right: 0;z-index: 15000;background:#000;text-align: center;}
@@ -658,3 +672,19 @@ nav ul li:hover img {
 .btn_wrap2 .next_btn2{right:1%;background-image: url(../img/video_btn_next.png);background-repeat: no-repeat;}
 
 .point{position: absolute; background-image: url("../img/point.png");background-repeat: no-repeat;background-size: contain;z-index: 10000}
+
+nav .box-title {
+  display:flex; padding:8px; align-items: center;
+  background-color:rgba(255,255,255,0.8);
+  border-radius:8px;
+}
+nav .box-title .number {
+  display:flex; align-items: center; justify-content: center;
+  width:24px; height:24px; margin-right:12px;
+  font-size:13px; font-weight:500; color:#fff; background-color:#E16E26;
+  border-radius:5px;
+}
+nav .box-title .title {
+  font-size:14px; font-weight:bold; color:#000;
+  overflow:hidden; text-overflow:ellipsis; white-space: nowrap;
+}

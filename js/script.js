@@ -171,7 +171,7 @@ $(document).ready(function(e){
 				$("#frame>div").css({right:0,opacity:1});
 				$(".pop_title22").fadeIn();
 				return page_blink();
-			}else if(currentPage == 69){
+			}else if(currentPage == 68){
 				currentPage--;
 				$("#nav_text_current").text(currentPage);
 				$("#frame>div").removeClass("current");
@@ -286,7 +286,7 @@ $(document).ready(function(e){
 					return page_blink();
 				});
 			} */
-			else if(currentPage == 67){
+			else if(currentPage == 66){
 				currentPage++;
 				$(".pop_title67").fadeIn();
 				$("#nav_text_current").text(currentPage);
@@ -643,14 +643,14 @@ $(document).ready(function(e){
 		$(".img26 .zoom_link img").fadeOut();
 		$(".img26 .zoom16 .zoom1").removeClass("extended")
 		$(".img26 .em_box").css({opacity:0});
-		return linkBtn(53);
+		return linkBtn(52);
 	});
 	$(".img26 .zoom_link_btn2").click(function(){
 		$(".img26 .zoom_link").fadeOut();
 		$(".img26 .zoom_link img").fadeOut();
 		$(".img26 .em_box").css({opacity:0});
 		$(".img26 .zoom16 .zoom1").removeClass("extended")
-		return linkBtn(56);
+		return linkBtn(55);
 	});
 	/* $(".img26 .zoom_link_btn3").click(function(){
 		$(".img26 .zoom_link").fadeOut();
